@@ -1,0 +1,18 @@
+{% extends "template.html" %} {% block title %} Recomendation - Hashtags {%
+endblock %} {% block body %}
+
+<form action="{{ url_for('search') }}" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <div style="margin: 50px">
+    <p>
+      {{ form.search.label }} <br />
+      {{ form.search(size=32)}}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </div>
+</form>
+
+<h2>Do you want to logout?</h2>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

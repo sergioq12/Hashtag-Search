@@ -1,0 +1,15 @@
+{% extends "template.html" %} 
+{% block title %} Recommended Hashtags {% endblock %}
+
+{% block body %}
+
+{% for hashtag in recommendedHashtags %}
+<ul>
+    <li>{{ hashtag }}</li>
+</ul>
+{% endfor %}
+
+<h2>Do you want to logout?</h2>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}

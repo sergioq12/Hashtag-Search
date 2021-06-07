@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/template.css') }}">
+    {% block style %}{% endblock %}
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav>
+        <h1 id="logo">Hashtag Project</h1>
+        <ul class="nav-links">
+          {% if session.username %}
+          <li><a class="nav-links-regular" href="#">Home</a></li>
+          <li><a class="nav-links-regular" href="#">History</a></li>
+          <li><a class="subscribe" href="#">{{ session.username }}</a></li>
+          {% else %}
+          <li><a class="nav-links-regular" href="#">Register</a></li>
+          <li><a class="nav-links-regular" href="#">More Info</a></li>
+          <li><a class="subscribe" href="#">Subscribe</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    {% block body %}{% endblock %}
+  </body>
+</html>
