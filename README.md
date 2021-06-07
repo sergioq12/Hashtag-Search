@@ -1,4 +1,5 @@
-#Hashtag-Search 
+Hashtag-Search 
+==============
 This project is a Flask Web Application that supports login and register validation with a sql alchemy database. 
 Then, with Selenium is going to search a hashtag that the user wants, and it is going to show the hashtags that are recommended for the user's use.
 
