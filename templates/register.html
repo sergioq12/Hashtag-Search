@@ -1,28 +1,35 @@
 {% extends "template.html" %} 
 {% block title %} Register {% endblock %}
+{% block style %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/register.css') }}"
+/>
+
+{% endblock %} 
 
 {% block body %}
 <form action="{{ url_for('registered') }}" method="post" novalidate>
   {{ form.hidden_tag() }}
-  <div style="margin: 50px;">
-
-    <p>
+  <div class="form-container">
+    <p class="label">
       {{ form.username.label }}<br />
-      {{ form.username(size=32) }}
+      {{ form.username(size=64) }}
     </p>
-    <p>
+    <p class="label">
       {{ form.password.label }}<br />
-      {{ form.password(size=32) }}
+      {{ form.password(size=64) }}
     </p>
-    <p>
+    <p class="label">
       {{ form.re_password.label }}<br />
-      {{ form.re_password(size=32) }}
+      {{ form.re_password(size=64) }}
     </p>
-    <p>
+    <p class="label">
       {{ form.email.label }}<br />
       {{ form.email(size=64) }}
     </p>
-    <p>{{ form.submit() }}</p>
+    <div class="input-submit-container">{{ form.submit() }}</div>
   </form>
   
   {% with messages = get_flashed_messages() %}

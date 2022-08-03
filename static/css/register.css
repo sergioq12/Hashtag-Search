@@ -7,8 +7,8 @@ form {
 }
 
 .form-container {
-  width: 300px;
-  height: 220px;
+  width: 500px;
+  height: 300px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -24,12 +24,12 @@ form {
 }
 
 .label > label {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .label > input {
   margin-top: 0.7rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: none;
   outline: none;
   border-bottom: 1px solid #d4d2d2;
@@ -47,6 +47,7 @@ form {
 }
 
 .input-submit-container > input {
+  margin-top: 1rem;
   padding: 0.5rem;
   background: none;
   border: none;

@@ -1,19 +1,28 @@
-{% extends "template.html" %} {% block title %} Log in {% endblock %} {% block
-body %}
+{% extends "template.html" %} 
+{% block title %} Log in {% endblock %} 
+{% block style %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+
+{% endblock %} 
+{% block body %}
 <form action="{{ url_for('loggedin') }}" method="post" novalidate>
   {{ form.hidden_tag() }}
-  <div class="">
+  <div class="form-container">
 
-    <p style="font-size: 30px; width: 100%">
+    <p class="label">
       {{ form.username.label }}<br />
       {{ form.username(size=32) }}
     </p>
-    <p>
+    <p class="label">
       {{ form.password.label }}<br />
       {{ form.password(size=32) }}
     </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit() }}</p>
+    <div class="input-remember-me">{{ form.remember_me() }} {{ form.remember_me.label }}</div>
+    <div class="input-submit-container">{{ form.submit() }}</div>
   </form>
   {% with messages = get_flashed_messages() %} {% if messages %}
   <ul class="flashes">

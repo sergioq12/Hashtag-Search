@@ -31,6 +31,11 @@ def index():
     session.clear()
     return render_template("index.html")
 
+@app.route("/recommendation", methods=["GET", "POST"])
+def recommendation():
+    form = SearchForm()
+    return render_template("recomendation.html", form=form)
+
 @app.route("/login")
 def login():
     form = LoginForm()
