@@ -1,54 +1,28 @@
 {% extends "template.html" %} {% block title %} Hashtag Project {% endblock %}
 {% block style %}
-<!--
+
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/login.css') }}"
+  href="{{ url_for('static', filename='css/index.css') }}"
 />
--->
-{% endblock %} {% block body %} {% if session.username %} Hello {{
-session.username }} {% endif %}
-<h1
-  style="
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-top: 30px;
-    font-size: 65px;
-  "
->
-  Welcome to Hashtag Project!
-</h1>
-<p style="margin: 40px; font-size: 40px">
-  We introduce you to this amazing project in order to get your hashtag
-  recommendations
-</p>
-<h4 style="margin: 30px; font-size: 35px">Do you want to Log in?</h4>
-<a
-  style="font-size: 30px; margin-left: 50px; text-decoration: none; color: black;background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 2rem;"
-  href="{{ url_for('login') }}"
-  >Log In</a
->
-<h4 style="margin: 30px; font-size: 35px">Do you want to Register?</h4>
-<a style="font-size: 30px; margin-left: 50px; text-decoration: none; color: black;background: linear-gradient(
-  45deg,
-  #f09433 0%,
-  #e6683c 25%,
-  #dc2743 50%,
-  #cc2366 75%,
-  #bc1888 100%
-);
-color: white;
-padding: 1rem 2rem;
-border-radius: 2rem;" href="{{ url_for('register') }}">Register</a>
+
+{% endblock %} {% block body %} {% if session.username %} Hello
+{{session.username }} {% endif %}
+<div class="container">
+  <h1 class="title">Welcome to Hashtag Project!</h1>
+  <p class="paragraph">
+    We introduce you to this amazing project in order to get your hashtag
+    recommendations
+  </p>
+  <div class="inner-container">
+    <div class="option">
+      <h4 class="subtitle">Do you want to Log in?</h4>
+      <a class="button" href="{{ url_for('login') }}">Log In</a>
+    </div>
+    <div class="option">
+      <h4 class="subtitle">Do you want to Register?</h4>
+      <a class="button" href="{{ url_for('register') }}">Register</a>
+    </div>
+  </div>
+</div>
 {% endblock %}

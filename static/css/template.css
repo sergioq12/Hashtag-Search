@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  font-family: "Merriweather Sans", sans-serif;
 }
 
 * {
@@ -10,29 +11,29 @@ html {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: lighter;
 }
 
 h2 {
-  font-size: 8rem;
+  font-size: 1.5rem;
   font-weight: lighter;
 }
 
 h3 {
-  font-size: 3.5rem;
+  font-size: 1.2rem;
 }
 
 h4 {
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 p {
-  font-size: 2.5rem;
+  font-size: 0.8rem;
 }
 
 li {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 a {
@@ -42,16 +43,16 @@ a {
 .nav-container {
   /* Here it will go the background for the nav */
   background: #f7f7f7;
-  font-family: Helvetica, serif;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 12vh;
 }
 .nav-links {
+  flex: 1;
   display: flex;
   justify-content: space-around;
   width: 25%;
@@ -59,6 +60,24 @@ nav {
 
 .nav-links li {
   list-style: none;
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.nav-links-regular:hover {
+  background-image: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .nav-links .subscribe {
@@ -75,12 +94,30 @@ nav {
   border-radius: 2rem;
 }
 
+.nav-links .subscribe:hover {
+  background: white;
+  background-image: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  border: 1px solid #dc2743;
+}
+
 .nav-links-regular {
   color: black;
   font-family: "Open Sans", sans-serif;
 }
 #logo {
-  font-size: 3.5rem;
+  font-size: 2rem;
+  flex: 1;
   /* This is the way to add a gradient to a text */
   background-image: linear-gradient(
     45deg,
@@ -94,8 +131,6 @@ nav {
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-}
-
-.subscribe {
-  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-weight: 600;
 }

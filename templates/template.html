@@ -9,20 +9,34 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/template.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/template.css') }}"
+    />
     {% block style %}{% endblock %}
   </head>
   <body>
     <div class="nav-container">
       <nav>
-        <h1 id="logo">Hashtag Project</h1>
+        <h1 id="logo"><a href="{{ url_for('index')}}">HASHTAG PROJECT</a></h1>
         <ul class="nav-links">
           {% if session.username %}
           <li><a class="nav-links-regular" href="#">Home</a></li>
           <li><a class="nav-links-regular" href="#">History</a></li>
           <li><a class="subscribe" href="#">{{ session.username }}</a></li>
           {% else %}
-          <li><a class="nav-links-regular" href="#">Register</a></li>
+          <li>
+            <a class="nav-links-regular" href="{{ url_for('register') }}"
+              >Register</a
+            >
+          </li>
           <li><a class="nav-links-regular" href="#">More Info</a></li>
           <li><a class="subscribe" href="#">Subscribe</a></li>
           {% endif %}
